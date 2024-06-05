@@ -1,0 +1,50 @@
+# Library Management System
+
+This project is a simple library management system. It allows users to manage books and users within a library, including adding, removing, borrowing, and returning books. The system also supports searching for books by title, author, or ISBN, and finding users by their name. There are three main classes in this project Book, User and Library.
+
+## Classes
+
+### Book
+
+Represents a book with the following attributes:
+-`title` (std::string): The title of the book.
+-`author` (std::string): The author of the book.
+-`isbn` (std::string): The ISBN of the book.
+
+**Methods**:
+-Constructor: Initializes a book with title, author, and ISBN.
+-`operator==`: Compares books by their ISBN.
+
+### User
+
+Represents a user with the following attributes:
+-`name` (std::string): The name of the user.
+-`borrowedBooks` (std::vector< Book>): A list of books borrowed by the user.
+
+**Methods**:
+-Constructor: Initializes a user with a name.
+-`borrowBook(Book &book)`: Borrows a book and adds it to the user's borrowed books.
+-`returnBook(Book &book)`: Returns a borrowed book and removes it from the user's borrowed books.
+
+### Library
+
+Represents a library with the following attributes:
+-`books` (std::vector< Book>): A list of books in the library.
+-`users` (std::vector< User>): A list of users in the library.
+
+**Methods**:
+-`addBook(const Book &book)`: Adds a book to the library.
+-`removeBook(const std::string &isbn)`: Removes a book from the library by ISBN.
+-`addUser(const User &user)`: Adds a user to the library.
+-`findUser(const std::string &name)`: Finds a user by name.
+-`searchBookByTitle(const std::string &title)`: Searches for a book by title.
+-`searchBookByAuthor(const std::string &author)`: Searches for a book by author.
+-`searchBookByISBN(const std::string &isbn)`: Searches for a book by ISBN.
+
+## Usage
+
+### Compilation
+
+To compile the code, use the following command in the terminal:
+
+g++ -o librarymanagement librarymanagement.cpp
